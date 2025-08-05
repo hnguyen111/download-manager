@@ -7,6 +7,7 @@
 package idm
 
 import (
+	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -950,7 +951,7 @@ var File_api_idm_proto protoreflect.FileDescriptor
 
 const file_api_idm_proto_rawDesc = "" +
 	"\n" +
-	"\rapi/idm.proto\x12\x03idm\"2\n" +
+	"\rapi/idm.proto\x12\x03idm\x1a\x12api/validate.proto\"2\n" +
 	"\x04User\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x1a\n" +
 	"\busername\x18\x02 \x01(\tR\busername\"\xca\x01\n" +
@@ -959,34 +960,34 @@ const file_api_idm_proto_rawDesc = "" +
 	"\aof_user\x18\x02 \x01(\v2\t.idm.UserR\x06ofUser\x126\n" +
 	"\rdownload_type\x18\x03 \x01(\x0e2\x11.idm.DownloadTypeR\fdownloadType\x12\x10\n" +
 	"\x03url\x18\x04 \x01(\tR\x03url\x12<\n" +
-	"\x0fdownload_status\x18\x05 \x01(\x0e2\x13.idm.DownloadStatusR\x0edownloadStatus\"N\n" +
-	"\x14CreateAccountRequest\x12\x1a\n" +
-	"\busername\x18\x01 \x01(\tR\busername\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\"0\n" +
+	"\x0fdownload_status\x18\x05 \x01(\x0e2\x13.idm.DownloadStatusR\x0edownloadStatus\"\x86\x01\n" +
+	"\x14CreateAccountRequest\x126\n" +
+	"\busername\x18\x01 \x01(\tB\x1a\xfaB\x17r\x152\x13^[a-zA-Z0-9]{6,32}$R\busername\x126\n" +
+	"\bpassword\x18\x02 \x01(\tB\x1a\xfaB\x17r\x152\x13^[a-zA-Z0-9]{6,32}$R\bpassword\"0\n" +
 	"\x15CreateAccountResponse\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x04R\x06userId\"N\n" +
-	"\x14CreateSessionRequest\x12\x1a\n" +
-	"\busername\x18\x01 \x01(\tR\busername\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\"-\n" +
+	"\auser_id\x18\x01 \x01(\x04R\x06userId\"\x86\x01\n" +
+	"\x14CreateSessionRequest\x126\n" +
+	"\busername\x18\x01 \x01(\tB\x1a\xfaB\x17r\x152\x13^[a-zA-Z0-9]{6,32}$R\busername\x126\n" +
+	"\bpassword\x18\x02 \x01(\tB\x1a\xfaB\x17r\x152\x13^[a-zA-Z0-9]{6,32}$R\bpassword\"-\n" +
 	"\x15CreateSessionResponse\x12\x14\n" +
-	"\x05token\x18\x01 \x01(\tR\x05token\"{\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\"\x85\x01\n" +
 	"\x19CreateDownloadTaskRequest\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x126\n" +
-	"\rdownload_type\x18\x02 \x01(\x0e2\x11.idm.DownloadTypeR\fdownloadType\x12\x10\n" +
-	"\x03url\x18\x03 \x01(\tR\x03url\"T\n" +
+	"\rdownload_type\x18\x02 \x01(\x0e2\x11.idm.DownloadTypeR\fdownloadType\x12\x1a\n" +
+	"\x03url\x18\x03 \x01(\tB\b\xfaB\x05r\x03\x88\x01\x01R\x03url\"T\n" +
 	"\x1aCreateDownloadTaskResponse\x126\n" +
-	"\rdownload_task\x18\x01 \x01(\v2\x11.idm.DownloadTaskR\fdownloadTask\"`\n" +
+	"\rdownload_task\x18\x01 \x01(\v2\x11.idm.DownloadTaskR\fdownloadTask\"i\n" +
 	"\x1aGetDownloadTaskListRequest\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x16\n" +
-	"\x06offset\x18\x02 \x01(\x04R\x06offset\x12\x14\n" +
-	"\x05limit\x18\x03 \x01(\x04R\x05limit\"\x99\x01\n" +
+	"\x06offset\x18\x02 \x01(\x04R\x06offset\x12\x1d\n" +
+	"\x05limit\x18\x03 \x01(\x04B\a\xfaB\x042\x02\x18dR\x05limit\"\x99\x01\n" +
 	"\x1bGetDownloadTaskListResponse\x12?\n" +
 	"\x12download_task_list\x18\x01 \x03(\v2\x11.idm.DownloadTaskR\x10downloadTaskList\x129\n" +
-	"\x19total_download_task_count\x18\x02 \x01(\x04R\x16totalDownloadTaskCount\"m\n" +
+	"\x19total_download_task_count\x18\x02 \x01(\x04R\x16totalDownloadTaskCount\"w\n" +
 	"\x19UpdateDownloadTaskRequest\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12(\n" +
-	"\x10download_task_id\x18\x02 \x01(\x04R\x0edownloadTaskId\x12\x10\n" +
-	"\x03url\x18\x03 \x01(\tR\x03url\"T\n" +
+	"\x10download_task_id\x18\x02 \x01(\x04R\x0edownloadTaskId\x12\x1a\n" +
+	"\x03url\x18\x03 \x01(\tB\b\xfaB\x05r\x03\x88\x01\x01R\x03url\"T\n" +
 	"\x1aUpdateDownloadTaskResponse\x126\n" +
 	"\rdownload_task\x18\x01 \x01(\v2\x11.idm.DownloadTaskR\fdownloadTask\"[\n" +
 	"\x19DeleteDownloadTaskRequest\x12\x14\n" +
